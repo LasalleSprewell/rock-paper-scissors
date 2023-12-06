@@ -32,10 +32,18 @@ function battle(playerChoice) {
 
 };
 function keepScore(playerChoice, computerChoice){
-    if (playerChoice === "rock" && computerChoice === "scissors" || 
+    if (
+    playerChoice === "rock" && computerChoice === "scissors" || 
     playerChoice === "paper" && computerChoice === "rock" ||
     playerChoice === "scissors" && computerChoice === "paper"){
-        playerScore++
+        playerScore++;
+    }
+    else if (
+    playerChoice === "rock" && computerChoice === "paper" || 
+    playerChoice === "paper" && computerChoice === "scissors" ||
+    playerChoice === "scissors" && computerChoice === "rock"
+    ){
+        computerScore++;
     }
     numbScore.textContent = `Player: ${playerScore} vs  Computer: ${computerScore}`;
 }
