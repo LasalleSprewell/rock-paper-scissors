@@ -1,25 +1,26 @@
 const choices = ["rock","scissors", "paper"];
+const score = document.getElementById("score");
+// Rock Button Setup
 const rockBut = document.getElementById("rock-button");
-const rockButtonClick = rockBut.addEventListener("click", function(){
-    console.log("yea")
+rockBut.addEventListener("click", function(){
+    let playerChoice = "rock";
+    battle(playerChoice);
 });
+
+
+
+
 function makePick() {
     const random = Math.floor(Math.random() * choices.length);
     return choices[random];
 }
-
-
-console.log(makePick());
-let playerChoice = ""
-let computerChoice = ""
-
-function battle() {
+function battle(playerChoice) {
     let answer = makePick();
     if ( answer === "rock" ){
-        return "you lost bruh";
+        return score.textContent = "you lost bruh";
     }
     else {
-        return "o shit you won";
+        return score.textContent = "o shit you won";
     }
 
 };
