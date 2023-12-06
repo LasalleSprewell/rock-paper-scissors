@@ -1,6 +1,7 @@
 const choices = ["rock","scissors", "paper"];
 const score = document.getElementById("score");
 const numbScore = document.getElementById("numbered-score");
+const finalScore = document.getElementById("final-score");
 let playerScore = 0;
 let computerScore = 0;
 // Rock Button Setup
@@ -46,4 +47,21 @@ function keepScore(playerChoice, computerChoice){
         computerScore++;
     }
     numbScore.textContent = `Player: ${playerScore} vs  Computer: ${computerScore}`;
+    if (playerScore === 10){
+        finalScore.textContent = `YOU WON!!!!`;
+        setTimeout(reset, 2500);
+    } else if(computerScore === 10) {
+        finalScore.textContent = `YOU LOST, YOU BUM!!!`;
+        setTimeout(reset, 5000);
+    }
+    
+}
+    
+
+
+function reset (){
+    numbScore.textContent = "Player: 0 vs Computer: 0";
+    playerScore = 0;
+    computerScore = 0;
+    finalScore.textContent = "";
 }
