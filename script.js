@@ -22,16 +22,19 @@ paperBut.addEventListener("click", function(){
     let playerChoice = "paper";
     battle(playerChoice);
 });
+// This function randomly picks scissors, paper or rock
 function makePick() {
     const random = Math.floor(Math.random() * choices.length);
     return choices[random];
 }
+// This function actually compares your pick to the random pick of the computer
 function battle(playerChoice) {
     let computerChoice = makePick();
     keepScore(playerChoice, computerChoice);
     return score.textContent = `You picked ${playerChoice} - Computer picked ${computerChoice}`;
 
 };
+// This function keeps the score
 function keepScore(playerChoice, computerChoice){
     if (
     playerChoice === "rock" && computerChoice === "scissors" || 
@@ -56,9 +59,7 @@ function keepScore(playerChoice, computerChoice){
     }
     
 }
-    
-
-
+// This function resets the score once the game is over
 function reset (){
     numbScore.textContent = "Player: 0 vs Computer: 0";
     playerScore = 0;
