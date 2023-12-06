@@ -32,8 +32,10 @@ function battle(playerChoice) {
 
 };
 function keepScore(playerChoice, computerChoice){
-    if (playerChoice === "rock" && computerChoice === "scissors"){
+    if (playerChoice === "rock" && computerChoice === "scissors" || 
+    playerChoice === "paper" && computerChoice === "rock" ||
+    playerChoice === "scissors" && computerChoice === "paper"){
         playerScore++
     }
-    numbScore.textContent = `Player Score: ${playerScore} vs  Computer Score: ${computerScore}`;
+    numbScore.textContent = `Player: ${playerScore} vs  Computer: ${computerScore}`;
 }
