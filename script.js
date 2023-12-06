@@ -52,10 +52,16 @@ function keepScore(playerChoice, computerChoice){
     numbScore.textContent = `Player: ${playerScore} vs  Computer: ${computerScore}`;
     if (playerScore === 10){
         finalScore.textContent = `YOU WON!!!!`;
-        setTimeout(reset, 2500);
+        rockBut.disabled = true;
+        paperBut.disabled = true;
+        scissorsBut.disabled = true;
+        setTimeout(reset, 3000);
     } else if(computerScore === 10) {
         finalScore.textContent = `YOU LOST, YOU BUM!!!`;
-        setTimeout(reset, 5000);
+        rockBut.disabled = true;
+        paperBut.disabled = true;
+        scissorsBut.disabled = true;
+        setTimeout(reset, 3000);
     }
     
 }
@@ -64,5 +70,9 @@ function reset (){
     numbScore.textContent = "Player: 0 vs Computer: 0";
     playerScore = 0;
     computerScore = 0;
-    finalScore.textContent = "";
+    finalScore.textContent = ``;
+    score.textContent = ``;
+    rockBut.disabled = false;
+    paperBut.disabled = false;
+    scissorsBut.disabled = false;
 }
