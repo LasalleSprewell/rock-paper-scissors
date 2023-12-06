@@ -7,14 +7,14 @@ rockBut.addEventListener("click", function(){
     battle(playerChoice);
 });
 // Scissors Button Setup
-const scissorsBut = document.getElementById("rock-button");
-rockBut.addEventListener("click", function(){
+const scissorsBut = document.getElementById("scissors-button");
+scissorsBut.addEventListener("click", function(){
     let playerChoice = "scissors";
     battle(playerChoice);
 });
 // Paper Button Setup
-const paperBut = document.getElementById("rock-button");
-rockBut.addEventListener("click", function(){
+const paperBut = document.getElementById("paper-button");
+paperBut.addEventListener("click", function(){
     let playerChoice = "paper";
     battle(playerChoice);
 });
@@ -29,9 +29,7 @@ function makePick() {
 }
 function battle(playerChoice) {
     let computerChoice = makePick();
-    if ( playerChoice === "rock" ){
-        return score.textContent = `You picked ${playerChoice} - Computer picked ${computerChoice}`;
-    }
+    return score.textContent = `You picked ${playerChoice} - Computer picked ${computerChoice}`;
 
 };
 
