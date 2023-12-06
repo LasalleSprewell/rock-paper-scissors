@@ -1,5 +1,8 @@
 const choices = ["rock","scissors", "paper"];
-const rockBut = document.getElementById("rock-button")
+const rockBut = document.getElementById("rock-button");
+const rockButtonClick = rockBut.addEventListener("click", function(){
+    console.log("yea")
+});
 function makePick() {
     const random = Math.floor(Math.random() * choices.length);
     return choices[random];
@@ -22,6 +25,7 @@ function battle() {
 };
 
 function rockButton (){
-    let
+    let playerChoice = "rock";
+
 }
 
