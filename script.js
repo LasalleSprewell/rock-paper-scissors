@@ -18,11 +18,6 @@ paperBut.addEventListener("click", function(){
     let playerChoice = "paper";
     battle(playerChoice);
 });
-
-
-
-
-
 function makePick() {
     const random = Math.floor(Math.random() * choices.length);
     return choices[random];
