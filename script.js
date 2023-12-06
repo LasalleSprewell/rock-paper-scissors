@@ -1,5 +1,8 @@
 const choices = ["rock","scissors", "paper"];
 const score = document.getElementById("score");
+const numbScore = document.getElementById("numbered-score");
+let playerScore = 0;
+let computerScore = 0;
 // Rock Button Setup
 const rockBut = document.getElementById("rock-button");
 rockBut.addEventListener("click", function(){
@@ -24,12 +27,13 @@ function makePick() {
 }
 function battle(playerChoice) {
     let computerChoice = makePick();
+    keepScore(playerChoice, computerChoice);
     return score.textContent = `You picked ${playerChoice} - Computer picked ${computerChoice}`;
 
 };
-
-function rockButton (){
-    let playerChoice = "rock";
-
+function keepScore(playerChoice, computerChoice){
+    if (playerChoice === "rock" && computerChoice === "scissors"){
+        playerScore++
+    }
+    numbScore.textContent = `Player Score: ${playerScore} vs  Computer Score: ${computerScore}`;
 }
-
